@@ -106,6 +106,49 @@ Dự án đang ở trạng thái "Cảnh báo đỏ" về chi phí và "Cảnh b
 - Theo dõi CPI hàng tuần thay vì 2 tuần
 
 ---
+* Phân tích “Sức khỏe” dự án
+1️ Đánh giá hiện tại
+
+PV = 38 triệu
+
+EV = 34 triệu
+
+AC = 40 triệu
+
+BAC = 51 triệu
+
+ SPI = EV / PV = 0.89
+
+→ Dự án chậm tiến độ ~11%
+
+ CPI = EV / AC = 0.85
+
+→ Dự án vượt chi phí
+
+ Kết luận: Dự án đang ở trạng thái cảnh báo (trễ và tốn chi phí hơn kế hoạch).
+
+2️ Dự báo hoàn thành (Forecast)
+ EAC = BAC / CPI = 51 / 0.85 ≈ 60 triệu
+
+→ Nếu không điều chỉnh, tổng chi phí có thể lên ~60 triệu.
+
+ ETC = EAC − AC = 60 − 40 = 20 triệu
+
+→ Cần thêm khoảng 20 triệu để hoàn thành.
+
+3️ Nguyên nhân sai lệch
+
+R1: Dữ liệu đầu vào không đồng nhất → ETL kéo dài
+
+R3: Trễ tiến độ xử lý ETL
+
+R5: Dashboard cần tối ưu hiệu năng
+
+R6: Phối hợp giữa các bên chưa hiệu quả
+
+4️ Nhận định tổng thể
+
+Dự án đang chậm tiến độ và vượt chi phí do rủi ro kỹ thuật (ETL, dữ liệu) và thay đổi yêu cầu. Tuy nhiên, nếu kiểm soát phạm vi và tối ưu nguồn lực trong giai đoạn cuối, dự án vẫn có khả năng hoàn thành đúng mục tiêu chiến lược.
 
 ## 6. Kết luận quản trị
 
