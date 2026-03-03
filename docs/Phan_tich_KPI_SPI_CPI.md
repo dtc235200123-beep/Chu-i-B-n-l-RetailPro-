@@ -15,7 +15,7 @@ AC (Actual Cost) = 40.000.000 VNĐ
 
 ## 2. Các chỉ số hiệu suất
 
-### 2.1 Schedule Performance Index (SPI)
+### 2.1 SPI
 
 SPI = EV / PV  
 SPI = 34 / 38 = **0,89**
@@ -30,7 +30,7 @@ Dự án đang chậm tiến độ 11%.
 
 ---
 
-### 2.2 Cost Performance Index (CPI)
+### 2.2 CPI
 
 CPI = EV / AC  
 CPI = 34 / 40 = **0,85**
@@ -45,7 +45,7 @@ Dự án đang vượt chi phí 15%.
 
 ---
 
-### 2.3 Cost Variance (CV)
+### 2.3 CV
 
 CV = EV - AC  
 CV = 34 - 40 = -6 triệu
@@ -54,7 +54,7 @@ CV = 34 - 40 = -6 triệu
 
 ---
 
-### 2.4 Schedule Variance (SV)
+### 2.4 SV
 
 SV = EV - PV  
 SV = 34 - 38 = -4 triệu
@@ -65,7 +65,7 @@ SV = 34 - 38 = -4 triệu
 
 ## 3. Dự báo tương lai
 
-### Estimate at Completion (EAC)
+### EAC
 
 EAC = BAC / CPI  
 EAC = 51 / 0,85 ≈ 60 triệu
@@ -74,7 +74,7 @@ EAC = 51 / 0,85 ≈ 60 triệu
 
 ---
 
-### Estimate to Complete (ETC)
+### ETC
 
 ETC = EAC - AC  
 ETC = 60 - 40 = 20 triệu
