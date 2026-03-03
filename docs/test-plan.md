@@ -3,11 +3,11 @@
 ## 1. Mục tiêu kiểm thử
 
 Đảm bảo hệ thống Dashboard:
-- Hoạt động đúng yêu cầu nghiệp vụ
-- Số liệu chính xác
-- Hiệu năng ổn định
-- Đảm bảo bảo mật dữ liệu
-- Được người dùng chấp nhận trước khi bàn giao
++ Hoạt động đúng yêu cầu nghiệp vụ
++ Số liệu chính xác
++ Hiệu năng ổn định
++ Đảm bảo bảo mật dữ liệu
++ Được người dùng chấp nhận trước khi bàn giao
 
 ---
 
@@ -15,17 +15,17 @@
 
 ## 2.1 Phạm vi kiểm thử
 
-- Kiểm tra hiển thị KPI doanh thu
-- Kiểm tra KPI sản phẩm bán chạy
-- Kiểm tra KPI khách hàng
-- Kiểm tra bộ lọc theo ngày/tháng/năm
-- Kiểm tra xuất dữ liệu (nếu có)
++ Kiểm tra hiển thị KPI doanh thu
++ Kiểm tra KPI sản phẩm bán chạy
++ Kiểm tra KPI khách hàng
++  Kiểm tra bộ lọc theo ngày/tháng/năm
++Kiểm tra xuất dữ liệu (nếu có)
 
 ## 2.2 Tiêu chí đạt
 
-- Số liệu hiển thị khớp 100% với dữ liệu gốc
-- Không có lỗi giao diện
-- Không xảy ra lỗi hệ thống
++ Số liệu hiển thị khớp 100% với dữ liệu gốc
++ Không có lỗi giao diện
++ Không xảy ra lỗi hệ thống
 
 ---
 
@@ -34,30 +34,30 @@
 ## 3.1 Kiểm thử hiệu năng (Performance Testing)
 
 Mục tiêu:
-- Dashboard tải trong ≤ 3 giây với dữ liệu hiện tại
-- Không bị treo khi truy vấn dữ liệu lớn
++ Dashboard tải trong ≤ 3 giây với dữ liệu hiện tại
++ Không bị treo khi truy vấn dữ liệu lớn
 
 Cách kiểm tra:
-- Đo thời gian load trang
-- Kiểm tra truy vấn SQL
++ Đo thời gian load trang
++ Kiểm tra truy vấn SQL
 
 Tiêu chí đạt:
-- Thời gian phản hồi < 3 giây
-- Không lỗi timeout
++ Thời gian phản hồi < 3 giây
++ Không lỗi timeout
 
 ---
 
 ## 3.2 Kiểm thử bảo mật (Security Testing)
 
 Phạm vi:
-- Kiểm tra phân quyền truy cập
-- Kiểm tra truy cập trái phép
-- Kiểm tra bảo mật dữ liệu nhạy cảm
++ Kiểm tra phân quyền truy cập
++ Kiểm tra truy cập trái phép
++ Kiểm tra bảo mật dữ liệu nhạy cảm
 
 Tiêu chí đạt:
-- Người dùng không được truy cập dữ liệu ngoài quyền hạn
-- Không lộ thông tin quan trọng
-- Không có lỗi SQL Injection cơ bản
++ Người dùng không được truy cập dữ liệu ngoài quyền hạn
++ Không lộ thông tin quan trọng
++ Không có lỗi SQL Injection cơ bản
 
 ---
 
@@ -69,9 +69,9 @@ Tiêu chí đạt:
 
 ## 4.2 Người tham gia
 
-- Project Manager
-- Business Analyst
-- Đại diện Ban lãnh đạo
++ Project Manager
++ Business Analyst
++ Đại diện Ban lãnh đạo
 
 ## 4.3 Quy trình UAT
 
@@ -83,19 +83,19 @@ Tiêu chí đạt:
 
 ## 4.4 Tiêu chí nghiệm thu
 
-- 100% KPI hiển thị đúng yêu cầu
-- Không còn lỗi nghiêm trọng (Critical/High)
-- Người dùng xác nhận hài lòng
-- Có biên bản nghiệm thu
++ 100% KPI hiển thị đúng yêu cầu
++ Không còn lỗi nghiêm trọng (Critical/High)
++ Người dùng xác nhận hài lòng
++ Có biên bản nghiệm thu
 
 ---
 
 # 5. Tài liệu bàn giao sau kiểm thử
 
-- Biên bản UAT
-- Danh sách lỗi đã xử lý
-- Phiên bản Dashboard cuối cùng
-- Commit xác nhận bàn giao trên GitHub
++ Biên bản UAT
++ Danh sách lỗi đã xử lý
++ Phiên bản Dashboard cuối cùng
++ Commit xác nhận bàn giao trên GitHub
 
 ---
 
