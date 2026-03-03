@@ -1,9 +1,9 @@
-# RACI MATRIX
+# MA TRẬN PHÂN CÔNG RACI
 
-| Task | PM | Data Eng | BI Dev | BA |
-|------|----|----------|--------|----|
-| Requirement Gathering | A | | | R |
-| Data Modeling | C | R | | A |
-| ETL | | R | | C |
-| Dashboard | | C | R | A |
-| Testing | A | C | R | |
+| Công việc | Quản lý dự án | Kỹ sư dữ liệu | Lập trình viên BI | Phân tích nghiệp vụ |
+|------------|--------------|--------------|------------------|--------------------|
+| Thu thập yêu cầu | A | | | R |
+| Thiết kế dữ liệu | C | R | | A |
+| Xử lý dữ liệu | | R | | C |
+| Xây dựng Dashboard | | C | R | A |
+| Kiểm thử | A | C | R | |
