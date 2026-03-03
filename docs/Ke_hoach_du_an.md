@@ -1,33 +1,34 @@
-docs/Project_Plan.md
-# PROJECT PLAN – INSIGHTDASH
+KẾ HOẠCH DỰ ÁN CHI TIẾT – INSIGHTDASH
+1. Thông tin chung
 
-## 1. Project Overview
-Mục tiêu: Xây dựng hệ thống Dashboard phân tích dữ liệu kinh doanh cho RetailPro.
+Tên dự án: InsightDash
 
-## 2. Timeline (8 tuần)
+Khách hàng: Chuỗi bán lẻ RetailPro
 
-Sprint 1 (Tuần 1–2): ETL & Data Cleaning
-Sprint 2 (Tuần 3–4): Revenue Dashboard
-Sprint 3 (Tuần 5–6): Product & Customer Analytics
-Sprint 4 (Tuần 7–8): Optimization & UAT
+Thời gian: 8 tuần
 
-## 3. Budget
+Ngân sách (BAC): 51.000.000 VNĐ
 
-BAC (Budget at Completion): 51,000,000 VNĐ
+2. Phân rã công việc (WBS)
+STT	Hạng mục	Thời gian	Chi phí
+1	Phân tích yêu cầu	1 tuần	6 triệu
+2	Thiết kế mô hình dữ liệu	1 tuần	9 triệu
+3	Xây dựng ETL	2 tuần	15 triệu
+4	Xây dựng Dashboard	2 tuần	12 triệu
+5	Kiểm thử & hiệu chỉnh	1 tuần	6 triệu
+6	Triển khai & đào tạo	1 tuần	3 triệu
+3. Quan hệ phụ thuộc
 
-Phân bổ:
-- Phân tích: 6 triệu
-- Thiết kế: 9 triệu
-- Phát triển: 24 triệu
-- Testing: 6 triệu
-- Quản lý: 6 triệu
+Thiết kế dữ liệu → trước ETL
 
-## 4. Dependencies
+ETL → trước Dashboard
 
-- Data Model → ETL
-- ETL → Dashboard
-- Dashboard → Testing
-- Testing → UAT
+Dashboard → trước Kiểm thử
 
-## 5. Buffer
-Dự phòng 10% ngân sách và 1 tuần thời gian.
+Kiểm thử → trước Triển khai
+
+4. Dự phòng
+
+Thời gian dự phòng: 1 tuần
+
+Ngân sách dự phòng: 10%
