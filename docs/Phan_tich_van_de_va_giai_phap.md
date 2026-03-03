@@ -72,3 +72,10 @@ Nhóm không chỉ nhận diện rủi ro mà còn:
 - Điều chỉnh kế hoạch phù hợp
 
 Điều này giúp giảm thiểu ảnh hưởng tiêu cực đến tiến độ và ngân sách dự án.
+## Đánh giá mức độ rủi ro
+
+| Rủi ro | Xác suất | Ảnh hưởng | Mức độ |
+|--------|----------|-----------|--------|
+| Dữ liệu sai lệch | Cao | Cao | Nghiêm trọng |
+| Thay đổi yêu cầu | Trung | Cao | Cao |
+| Trễ tiến độ | Trung | Trung | Trung bình |
