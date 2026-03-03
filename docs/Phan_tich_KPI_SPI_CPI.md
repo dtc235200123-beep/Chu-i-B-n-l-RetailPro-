@@ -1,7 +1,113 @@
-Giải thích:
+# PHÂN TÍCH CHỈ SỐ KPI ĐÁNH GIÁ SỨC KHỎE DỰ ÁN
+Dự án: InsightDash – RetailPro
+Thời điểm đánh giá: Cuối tuần 6
 
-SPI = 0.89 → Dự án hoàn thành 89% khối lượng kế hoạch
-CPI = 0.85 → Mỗi 1 đồng chi ra chỉ tạo ra 0.85 đồng giá trị
+---
+
+## 1. Thông số cơ bản
+
+BAC (Budget at Completion) = 51.000.000 VNĐ  
+PV (Planned Value) = 38.000.000 VNĐ  
+EV (Earned Value) = 34.000.000 VNĐ  
+AC (Actual Cost) = 40.000.000 VNĐ  
+
+---
+
+## 2. Các chỉ số hiệu suất
+
+### 2.1 Schedule Performance Index (SPI)
+
+SPI = EV / PV  
+SPI = 34 / 38 = **0,89**
+
+Ý nghĩa:
+- SPI = 1 → Đúng tiến độ
+- SPI > 1 → Nhanh hơn kế hoạch
+- SPI < 1 → Chậm tiến độ
+
+→ SPI = 0,89 cho thấy dự án chỉ hoàn thành 89% khối lượng kế hoạch tại thời điểm báo cáo.
+Dự án đang chậm tiến độ 11%.
+
+---
+
+### 2.2 Cost Performance Index (CPI)
+
+CPI = EV / AC  
+CPI = 34 / 40 = **0,85**
+
+Ý nghĩa:
+- CPI = 1 → Đúng ngân sách
+- CPI > 1 → Tiết kiệm chi phí
+- CPI < 1 → Vượt ngân sách
+
+→ CPI = 0,85 nghĩa là mỗi 1 đồng chi ra chỉ tạo ra 0,85 đồng giá trị.
+Dự án đang vượt chi phí 15%.
+
+---
+
+### 2.3 Cost Variance (CV)
+
+CV = EV - AC  
+CV = 34 - 40 = -6 triệu
+
+→ Giá trị âm cho thấy dự án vượt ngân sách 6 triệu tại thời điểm đánh giá.
+
+---
+
+### 2.4 Schedule Variance (SV)
+
+SV = EV - PV  
+SV = 34 - 38 = -4 triệu
+
+→ Dự án chậm tiến độ tương đương 4 triệu giá trị công việc.
+
+---
+
+## 3. Dự báo tương lai
+
+### Estimate at Completion (EAC)
+
+EAC = BAC / CPI  
+EAC = 51 / 0,85 ≈ 60 triệu
+
+→ Nếu không điều chỉnh, tổng chi phí có thể tăng lên 60 triệu.
+
+---
+
+### Estimate to Complete (ETC)
+
+ETC = EAC - AC  
+ETC = 60 - 40 = 20 triệu
+
+→ Cần thêm 20 triệu để hoàn thành dự án.
+
+---
+
+## 4. Đánh giá "Sức khỏe" dự án
+
+| Chỉ số | Giá trị | Đánh giá |
+|--------|----------|-----------|
+| SPI | 0,89 | Cảnh báo |
+| CPI | 0,85 | Nguy hiểm |
+| CV | -6 triệu | Vượt chi phí |
+| SV | -4 triệu | Trễ tiến độ |
 
 Kết luận:
-Dự án đang "không khỏe", cần kiểm soát chi phí.
+Dự án đang ở trạng thái "Cảnh báo đỏ" về chi phí và "Cảnh báo vàng" về tiến độ.
+
+---
+
+## 5. Hành động điều chỉnh đề xuất
+
+- Cắt giảm các tính năng không cốt lõi
+- Tăng cường kiểm soát thay đổi yêu cầu
+- Tối ưu quy trình xử lý dữ liệu
+- Phân bổ lại nguồn lực cho Sprint 4
+- Theo dõi CPI hàng tuần thay vì 2 tuần
+
+---
+
+## 6. Kết luận quản trị
+
+Việc áp dụng các chỉ số SPI, CPI và EVM giúp nhóm đánh giá khách quan tình trạng dự án thay vì cảm tính.
+Dựa trên các chỉ số này, nhóm có cơ sở dữ liệu định lượng để đưa ra quyết định điều chỉnh kế hoạch.
