@@ -1,129 +1,116 @@
-# PHÂN TÍCH SỨC KHỎE DỰ ÁN VÀ DỰ BÁO HOÀN THÀNH
+# PHÂN TÍCH SỨC KHỎE DỰ ÁN
+## 1. Cơ sở dữ liệu phân tích
 
-## 1. Mục tiêu
+Tổng số Issue của dự án (BAC – Budget at Completion): 28  
+Số Issue đã hoàn thành (Closed): 16  
+Số Issue đang mở (Open): 12  
 
-Phân tích tình trạng thực tế dự án dựa trên dữ liệu quản lý tiến độ, hiệu suất và chi phí để xác định:
-- “Sức khỏe” dự án hiện tại (Project Health)
-- Dự báo thời gian và chi phí hoàn thành
-- Nguyên nhân sai lệch so với kế hoạch
+Giả định:
+- Tại thời điểm đánh giá, theo kế hoạch phải hoàn thành toàn bộ 28 Issue.
+- 1 Issue được quy đổi tương đương 1 đơn vị effort.
 
----
-
-## 2. Chỉ số đánh giá
-
-### 2.1. Planned Value (PV)
-
-Giá trị kế hoạch theo kế hoạch ban đầu (giả sử biểu diễn theo giờ công tích lũy).
-
-### 2.2. Earned Value (EV)
-
-Giá trị đạt được theo khối lượng công việc đã hoàn thành (dựa trên số task closed).
-
-### 2.3. Actual Cost (AC)
-
-Chi phí thực tế đã sử dụng (quy đổi theo giờ làm hoặc điểm tài nguyên).
+EV (Earned Value) = 16  
+PV (Planned Value) = 28  
+AC (Actual Cost quy đổi effort) = 28  
 
 ---
 
-## 3. Phân tích “Sức khỏe dự án”
+## 2. Phân tích chỉ số hiệu suất
 
-### 3.1. Tình trạng tiến độ
+### 2.1. Chỉ số tiến độ (SPI)
 
-Sử dụng chỉ số **SPI (Schedule Performance Index)**:
+SPI = EV / PV  
+SPI = 16 / 28 = 0.57  
 
-- SPI = 1 → Hoàn thành đúng tiến độ
-- SPI > 1 → Nhanh hơn kế hoạch
-- SPI < 1 → Chậm hơn kế hoạch
-
-**Kết quả phân tích:**
-
-- Ở cuối giai đoạn hiện tại, PV = 320, EV = 320 → SPI = 1  
-→ Dự án về tổng thể hoàn thành đúng kế hoạch.
-
-**Nhận xét:** Dự án có giai đoạn giữa **SPI < 1** do trễ tiến độ ETL, nhưng sau khi xử lý rủi ro và tăng tốc đóng Issue, tiến độ được phục hồi.
+→ SPI < 1 cho thấy dự án đang chậm tiến độ nghiêm trọng.  
+Tỷ lệ hoàn thành mới đạt 57% so với kế hoạch đề ra.
 
 ---
 
-### 3.2. Tình trạng chi phí
+### 2.2. Chỉ số chi phí (CPI)
 
-Sử dụng chỉ số **CPI (Cost Performance Index)**:
+CPI = EV / AC  
+CPI = 16 / 28 = 0.57  
 
-- CPI = 1 → Chi phí trong kiểm soát
-- CPI < 1 → Chi phí vượt dự kiến
-- CPI > 1 → Sử dụng hiệu quả hơn dự kiến
-
-**Kết quả phân tích:**
-
-- CUối giai đoạn phân tích: EV = 320, AC = 320  
-→ CPI = 1
-
-**Nhận xét:** Dự án kiểm soát chi phí hiệu quả, không phát sinh vượt ngân sách dự kiến.
+→ CPI < 1 cho thấy hiệu suất sử dụng nguồn lực thấp.  
+Để tạo ra 1 đơn vị giá trị, nhóm đang tiêu tốn gần gấp đôi effort dự kiến.
 
 ---
 
-## 4. Dự báo thời gian và chi phí hoàn thành
+## 3. Dự báo hoàn thành (Forecast)
 
-Sử dụng các công thức trong Earned Value Management:
+### 3.1. Estimate At Completion (EAC)
 
-### 4.1. ETC (Estimate To Complete)
+EAC = BAC / CPI  
+EAC = 28 / 0.57 ≈ 49 đơn vị effort  
 
-ETC là chi phí cần để hoàn thành phần còn lại:
-
-Trong đó:
-- BAC = Tổng ngân sách ban đầu (giả sử 320 giờ)
-- EV = 320
-- CPI = 1
-
-→ ETC = (320 - 320) / 1 = 0  
-→ Không còn chi phí dự kiến phát sinh thêm.
+→ Nếu không có biện pháp cải thiện, tổng effort khi kết thúc dự án có thể lên tới 49 thay vì 28 như kế hoạch ban đầu (tăng ~75%).
 
 ---
 
-### 4.2. EAC (Estimate At Completion)
+### 3.2. Estimate To Complete (ETC)
 
-EAC là ước tính chi phí khi hoàn tất toàn bộ dự án:
+ETC = EAC – AC  
+ETC = 49 – 28 = 21 đơn vị effort  
 
-Thay số:  
-→ EAC = 320 + 0 = 320
-
-**Nhận xét:** Dự án sẽ kết thúc với chi phí bằng đúng kế hoạch ban đầu nếu không có thay đổi thêm.
+→ Dự án cần thêm khoảng 21 đơn vị effort nữa để hoàn thành.
 
 ---
 
-## 5. Nguyên nhân sai lệch
+## 4. Phân tích nguyên nhân sai lệch
 
-### 5.1. Chậm tiến độ giữa kỳ
+Qua theo dõi Issue trên GitHub và nội dung các rủi ro đang mở, có thể xác định các nguyên nhân chính:
 
-- Giai đoạn ETL gặp dữ liệu đầu vào không nhất quán → phát sinh bug, mất thời gian kiểm tra.
-- Điều này khiến SPI trong giai đoạn đó giảm (<1).
-- Sau khi có buổi trao đổi với Nhóm kỹ thuật và xử lý dữ liệu mẫu → tiến độ cải thiện.
+### 4.1. Rủi ro kỹ thuật (Technical Risks)
+- Trễ tiến độ ETL
+- Dashboard chưa đáp ứng yêu cầu
+- Hiệu năng hệ thống thấp
 
-**Bài học:** Cần đánh giá kỹ chất lượng dữ liệu đầu vào ngay từ đầu.
+→ Dẫn đến việc phải sửa đổi và làm lại (rework), làm tăng AC và giảm CPI.
 
----
+### 4.2. Quản lý yêu cầu chưa chặt chẽ
+- Requirement thay đổi trong quá trình thực hiện
+- Stakeholder chưa thống nhất kỳ vọng ban đầu
 
-### 5.2. Khối lượng công việc phát sinh
+→ Làm PV không còn phản ánh chính xác khối lượng thực tế.
 
-- Phát sinh thay đổi yêu cầu KPI (CR-001) → tăng yêu cầu công việc → cần tinh chỉnh kế hoạch.
+### 4.3. Phân bổ nguồn lực chưa tối ưu
+- Issue chưa được chia nhỏ
+- Một số task có độ phức tạp cao nhưng ước lượng thấp
 
-**Bài học:** Quy trình Change Request cần phân tích kĩ và gắn trực tiếp vào Board/Milestone.
-
----
-
-## 6. Đánh giá tổng thể
-
-- SPI ≈ 1 → tiến độ tổng thể ổn định
-- CPI ≈ 1 → kiểm soát chi phí hiệu quả
-- Không còn rủi ro nghiêm trọng tồn đọng
-
-=> Dự án có “sức khỏe tốt”, tiến độ và chi phí đều nằm trong phạm vi kiểm soát.
+→ Làm giảm hiệu suất thực tế.
 
 ---
 
-## 7. Khuyến nghị để tăng hiệu quả
+## 5. Đánh giá tổng thể sức khỏe dự án
 
-- Theo dõi ước lượng dữ liệu real-time dựa trên số Issue đóng theo tuần → cập nhật Burndown chart hàng tuần
-- Tăng cường kiểm thử sớm để tránh sai lệch dữ liệu phát sinh
-- Đẩy mạnh giao tiếp nội bộ để giảm rủi ro do hiểu sai yêu cầu
+Dựa trên các chỉ số SPI và CPI (< 1), dự án đang ở trạng thái:
+
+* Chậm tiến độ  
+* Vượt effort dự kiến  
+* Có nguy cơ kéo dài thời gian hoàn thành  
+
+Nếu không có biện pháp điều chỉnh:
+- Thời gian hoàn thành sẽ kéo dài thêm ~75%
+- Effort thực tế có thể gần gấp đôi kế hoạch
 
 ---
+
+## 6. Đề xuất cải thiện và kiểm soát
+
+Để đưa dự án trở lại trạng thái ổn định, cần:
+
+1. Rà soát và chuẩn hóa lại backlog.
+2. Tách nhỏ Issue để ước lượng chính xác hơn.
+3. Áp dụng kiểm soát Sprint Review định kỳ.
+4. Ưu tiên xử lý các Issue có ảnh hưởng lớn đến KPI kinh doanh.
+5. Sử dụng Milestone và Dashboard GitHub để theo dõi tiến độ theo tuần.
+6. Thiết lập quy trình quản lý thay đổi (Change Control) rõ ràng.
+
+---
+
+## 7. Kết luận
+
+Phân tích định lượng bằng phương pháp Earned Value Management (EVM) cho thấy dự án đang có sai lệch đáng kể về tiến độ và chi phí. Tuy nhiên, các sai lệch chủ yếu đến từ yếu tố kỹ thuật và quản lý yêu cầu, có thể kiểm soát được nếu áp dụng các biện pháp cải tiến quy trình.
+
+Việc sử dụng dữ liệu trực tiếp từ GitHub (Issue, trạng thái Open/Closed) để tính toán SPI, CPI, EAC, ETC thể hiện khả năng làm chủ công cụ và áp dụng phương pháp quản lý dự án một cách thực tiễn.
