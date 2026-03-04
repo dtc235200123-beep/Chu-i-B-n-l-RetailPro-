@@ -1,148 +1,204 @@
-# PHÂN TÍCH TÌNH HUỐNG XUNG ĐỘT & HƯỚNG XỬ LÝ
+# PHÂN TÍCH XUNG ĐỘT & GIẢI PHÁP DUY TRÌ HIỆU SUẤT ĐỘI NHÓM
 ## Dự án: InsightDash – RetailPro
 
 ---
 
-# 1. Tình huống 1: Hai lập trình viên tranh cãi về giải pháp kỹ thuật
+# 1. Bối cảnh dự án
 
-## 1.1 Mô tả tình huống
+Dự án InsightDash đang ở giai đoạn Sprint 3 (tối ưu hiệu năng trước UAT). 
+Áp lực tiến độ cao vì phải đảm bảo:
 
-Trong Sprint 3 (giai đoạn tối ưu hiệu năng Dashboard), hai Developer xảy ra tranh cãi:
+- Dashboard tải < 3 giây (theo Test Plan)
+- Hoàn thành trước mốc UAT
+- Không ảnh hưởng kế hoạch Go-live
 
-- Dev A muốn tối ưu bằng cách thêm index và tối ưu truy vấn SQL.
-- Dev B muốn triển khai cache dữ liệu (Redis) để giảm tải truy vấn.
-
-Tranh luận kéo dài 2 ngày, ảnh hưởng tiến độ sprint và làm chậm kế hoạch UAT.
-
----
-
-## 1.2 Phân tích nguyên nhân
-
-- Cả hai đều tập trung vào giải pháp kỹ thuật, chưa dựa vào mục tiêu dự án.
-- Không có tiêu chí đánh giá rõ ràng (performance target).
-- Thiếu vai trò điều phối của Project Manager.
-
-Rủi ro phát sinh:
-- Trễ Sprint
-- Ảnh hưởng Go-live
-- Gây mất tinh thần đội nhóm
+Trong bối cảnh này, hai tình huống xung đột xảy ra.
 
 ---
 
-## 1.3 Áp dụng phương pháp giải quyết xung đột
-
-Theo lý thuyết quản lý dự án, có 5 phương pháp:
-
-1. Avoiding (Tránh né)
-2. Accommodating (Nhượng bộ)
-3. Compromising (Thỏa hiệp)
-4. Forcing (Áp đặt)
-5. Collaborating (Hợp tác)
-
-Trong tình huống này, phương pháp phù hợp nhất là:
-
-→ **Collaborating (Hợp tác)**
-
----
-
-## 1.4 Hướng xử lý cụ thể
-
-Bước 1: Tổ chức họp kỹ thuật ngắn (Technical Review Meeting)  
-Bước 2: Xác định mục tiêu rõ ràng:
-- Dashboard phải tải < 3 giây (theo Test Plan)
-- Không tăng chi phí hạ tầng quá mức
-
-Bước 3: Đưa ra tiêu chí đánh giá:
-- Độ cải thiện performance
-- Độ phức tạp triển khai
-- Ảnh hưởng bảo trì
-
-Bước 4: Thực hiện test thử nghiệm cả hai giải pháp trên môi trường staging
-
-Kết quả:
-- Tối ưu SQL cải thiện 40%
-- Cache cải thiện thêm 20% nữa
-
-Giải pháp cuối cùng:
-→ Kết hợp cả hai phương án (tối ưu SQL + cache cho dữ liệu lớn)
-
----
-
-## 1.5 Kết quả đạt được
-
-- Giữ đúng tiến độ Sprint
-- Cải thiện hiệu năng đạt tiêu chí UAT
-- Tăng tinh thần hợp tác giữa các thành viên
-
----
-
-# 2. Tình huống 2: Thành viên chậm tiến độ
+# 2. Tình huống 1: Tranh cãi kỹ thuật giữa hai Developer
 
 ## 2.1 Mô tả tình huống
 
-Data Engineer phụ trách xây dựng ETL nhưng trễ 5 ngày so với kế hoạch.
+Dev A: đề xuất tối ưu SQL & index  
+Dev B: đề xuất triển khai caching (Redis)
 
-Hệ quả:
-- Không có dữ liệu đầy đủ để kiểm thử
-- Sprint có nguy cơ trễ
-- Ảnh hưởng đến Test Plan và UAT
+Tranh luận kéo dài, trở nên căng thẳng, ảnh hưởng tiến độ Sprint và tinh thần nhóm.
 
 ---
 
-## 2.2 Phân tích nguyên nhân
+## 2.2 Phân tích chiều sâu (Góc độ kỹ năng mềm)
 
-Sau khi trao đổi riêng (1-1 meeting), phát hiện:
+### 1. Gốc rễ xung đột
 
-- Khối lượng công việc underestimated
-- Phát sinh yêu cầu thay đổi KPI (CR-001)
-- Thiếu hỗ trợ từ Developer
+- Cả hai đều muốn bảo vệ chuyên môn của mình.
+- Cảm giác “ý tưởng của mình tốt hơn”.
+- Áp lực deadline khiến giao tiếp trở nên căng thẳng.
+- Thiếu tiêu chí đánh giá khách quan.
 
----
+### 2. Yếu tố tâm lý
 
-## 2.3 Áp dụng phương pháp giải quyết
+- Nhu cầu được công nhận (Recognition)
+- Cái tôi chuyên môn (Professional Ego)
+- Áp lực thành tích trước UAT
 
-Phương pháp áp dụng:
-
-→ **Problem Solving / Collaborating**
-→ Không sử dụng Forcing vì dễ gây áp lực tiêu cực
-
----
-
-## 2.4 Hướng xử lý
-
-1. Điều chỉnh lại kế hoạch Sprint
-2. Chia nhỏ công việc ETL thành các task nhỏ
-3. Hỗ trợ thêm 1 Developer trong 3 ngày
-4. Cập nhật lại Risk Register (rủi ro trễ tiến độ)
-5. Ghi nhận vào Change Log nếu có ảnh hưởng baseline
+Nếu xử lý sai cách (Forcing hoặc né tránh):
+→ Có thể gây mất động lực lâu dài
+→ Hình thành chia rẽ nội bộ
 
 ---
 
-## 2.5 Kết quả
+## 2.3 Áp dụng mô hình giải quyết xung đột
 
-- Hoàn thành ETL sau 3 ngày điều chỉnh
-- Sprint chậm 1 ngày nhưng không ảnh hưởng Go-live
-- Cập nhật lại baseline hợp lý
+Theo Thomas–Kilmann Conflict Mode Instrument:
 
----
+- Avoiding → Không phù hợp
+- Competing (Forcing) → Gây tổn hại quan hệ
+- Compromising → Giải pháp trung bình
+- Collaborating → Phù hợp nhất
 
-# 3. Bài học rút ra
-
-- Xung đột kỹ thuật nên xử lý bằng Collaborating.
-- Luôn dựa vào mục tiêu dự án thay vì quan điểm cá nhân.
-- Theo dõi tiến độ sớm để phát hiện chậm trễ.
-- Cập nhật Risk Register khi phát sinh vấn đề.
-- Change Management giúp kiểm soát tác động hệ thống.
+→ Chọn **Collaborating (Hợp tác)**
 
 ---
 
-# 4. Kết luận
+## 2.4 Hướng xử lý ngắn hạn (Giải quyết vấn đề trước mắt)
 
-Việc áp dụng đúng phương pháp giải quyết xung đột giúp:
+1. Tổ chức Technical Review Meeting trung lập
+2. PM đóng vai trò điều phối, không phán xét
+3. Xác định mục tiêu chung: 
+   - Đạt performance target
+   - Giữ tiến độ Sprint
+4. Thống nhất tiêu chí đánh giá:
+   - Tốc độ cải thiện
+   - Độ phức tạp bảo trì
+   - Chi phí hạ tầng
 
-- Giữ vững tiến độ dự án
-- Duy trì tinh thần đội nhóm
-- Hạn chế rủi ro lan rộng
-- Đảm bảo hoàn thành UAT và Go-live đúng kế hoạch
+5. Cho phép thử nghiệm song song trên môi trường staging
 
-Tình huống trên cho thấy vai trò quan trọng của Project Manager trong điều phối, lắng nghe và ra quyết định dựa trên mục tiêu chung của dự án.
+Kết quả:
+- SQL optimization cải thiện 40%
+- Cache cải thiện thêm 20%
+
+Quyết định:
+→ Kết hợp hai giải pháp
+
+---
+
+## 2.5 Giải pháp dài hạn (Duy trì gắn kết & hiệu suất)
+
+- Thiết lập quy trình Technical Decision Framework rõ ràng
+- Áp dụng rule: “Data-driven decision”
+- Tổ chức retrospective cuối Sprint
+- Khuyến khích văn hóa: tranh luận về ý tưởng, không công kích cá nhân
+- Ghi nhận đóng góp của cả hai
+
+Kết quả lâu dài:
+- Tăng sự tôn trọng chuyên môn lẫn nhau
+- Cải thiện văn hóa phản biện tích cực
+- Tăng chất lượng quyết định kỹ thuật
+
+---
+
+# 3. Tình huống 2: Thành viên chậm tiến độ
+
+## 3.1 Mô tả
+
+Data Engineer trễ 5 ngày trong việc xây dựng ETL.
+Nguy cơ ảnh hưởng:
+
+- System Testing
+- UAT
+- Go-live timeline
+
+---
+
+## 3.2 Phân tích nguyên nhân sâu
+
+Qua 1-1 meeting (Active Listening):
+
+- Công việc bị underestimate
+- Phát sinh Change Request (CR-001)
+- Cảm thấy quá tải nhưng không dám báo sớm
+
+Yếu tố tâm lý:
+- Sợ bị đánh giá kém năng lực
+- Áp lực deadline
+- Thiếu hỗ trợ kỹ thuật
+
+---
+
+## 3.3 Kỹ năng mềm được áp dụng
+
+1. Active Listening
+2. Empathy (Thấu cảm)
+3. Coaching thay vì khiển trách
+4. Problem-solving mindset
+
+Không sử dụng:
+- Forcing
+- Blaming
+
+---
+
+## 3.4 Giải pháp ngắn hạn
+
+- Chia nhỏ task ETL
+- Phân bổ thêm 1 Developer hỗ trợ
+- Điều chỉnh nhẹ Sprint backlog
+- Cập nhật Risk Register
+- Thông báo minh bạch với Stakeholder
+
+Kết quả:
+- Hoàn thành sau 3 ngày điều chỉnh
+- Không ảnh hưởng Go-live
+
+---
+
+## 3.5 Giải pháp dài hạn
+
+- Áp dụng Workload Review mỗi Sprint
+- Tạo môi trường an toàn để báo sớm rủi ro
+- Thiết lập rule: “Không phạt người báo rủi ro sớm”
+- Theo dõi capacity planning thực tế
+
+Hiệu quả dài hạn:
+
+- Giảm burnout
+- Tăng sự tin tưởng
+- Cải thiện dự báo tiến độ chính xác hơn
+
+---
+
+# 4. Liên kết với các phần quản lý dự án khác
+
+| Vấn đề | Công cụ quản lý đã sử dụng |
+|--------|----------------------------|
+| Tranh cãi kỹ thuật | Technical Review + Data-driven decision |
+| Chậm tiến độ | Risk Register cập nhật |
+| Thay đổi yêu cầu | Change Management |
+| Đảm bảo chất lượng | Test Plan & UAT |
+| Duy trì tinh thần | Retrospective & Coaching |
+
+---
+
+# 5. Bài học về lãnh đạo & kỹ năng mềm
+
+- Xung đột không phải là tiêu cực nếu được quản lý tốt.
+- Lắng nghe quan trọng hơn phản biện tức thì.
+- Quyết định nên dựa trên dữ liệu thay vì cái tôi.
+- Minh bạch giúp giảm căng thẳng.
+- Văn hóa an toàn tâm lý (Psychological Safety) giúp duy trì hiệu suất lâu dài.
+
+---
+
+# 6. Kết luận
+
+Việc xử lý xung đột trong dự án InsightDash không chỉ giải quyết vấn đề trước mắt (tiến độ, hiệu năng) mà còn:
+
+- Củng cố sự tin tưởng giữa các thành viên
+- Nâng cao chất lượng quyết định kỹ thuật
+- Tăng động lực làm việc
+- Duy trì hiệu suất bền vững
+- Giảm rủi ro tái diễn xung đột trong tương lai
+
+Điều này thể hiện vai trò quan trọng của Project Manager không chỉ là người quản lý tiến độ, mà còn là người lãnh đạo, điều phối và xây dựng văn hóa đội nhóm tích cực.
