@@ -1,37 +1,44 @@
-# KẾ HOẠCH TRIỂN KHAI, ĐÀO TẠO VÀ BẢO TRÌ HỆ THỐNG DASHBOARD
+# KẾ HOẠCH TRIỂN KHAI, CHUYỂN GIAO & BẢO TRÌ
+## Dự án: InsightDash – RetailPro
 
 ---
 
 # 1. Mục tiêu
 
-Đảm bảo hệ thống Dashboard được:
-- Triển khai thành công
-- Người dùng sử dụng thành thạo
-- Có kế hoạch bảo trì rõ ràng
-- Có cam kết mức dịch vụ (SLA)
+- Đảm bảo hệ thống được triển khai ổn định sau khi hoàn tất UAT.
+- Đào tạo người dùng cuối sử dụng hiệu quả.
+- Thiết lập quy trình chuyển giao chính thức.
+- Xây dựng kế hoạch bảo trì và SLA rõ ràng.
 
 ---
 
 # 2. Kế hoạch triển khai (Deployment Plan)
 
-## 2.1 Chuẩn bị môi trường
+## 2.1 Điều kiện Go-Live
 
-- Kiểm tra máy chủ / hosting
-- Cấu hình cơ sở dữ liệu
-- Kiểm tra kết nối dữ liệu (POS, Website, CRM)
-- Kiểm tra bảo mật
+Hệ thống chỉ được triển khai khi:
 
-## 2.2 Triển khai chính thức
+- Hoàn tất 100% UAT
+- Không còn lỗi mức Critical/High
+- Stakeholder ký biên bản nghiệm thu
+- Backup dữ liệu hoàn tất
 
-- Deploy phiên bản đã nghiệm thu (Version 1.0)
-- Kiểm tra sau triển khai (Post-deployment testing)
-- Giám sát 48 giờ đầu
+---
 
-## 2.3 Tiêu chí hoàn tất triển khai
+## 2.2 Các bước triển khai
 
-- Hệ thống hoạt động ổn định
-- Không phát sinh lỗi nghiêm trọng
-- Người dùng đăng nhập và sử dụng bình thường
+1. Backup toàn bộ database
+2. Deploy phiên bản production
+3. Kiểm tra smoke test sau deploy
+4. Kiểm tra phân quyền
+5. Thông báo Go-Live chính thức
+
+---
+
+## 2.3 Thời gian triển khai
+
+- Thực hiện ngoài giờ hành chính (20:00 – 23:00)
+- Có đội hỗ trợ trực trong 48 giờ đầu
 
 ---
 
@@ -39,29 +46,36 @@
 
 ## 3.1 Đối tượng đào tạo
 
-- Ban lãnh đạo
-- Bộ phận kinh doanh
-- Nhân viên phân tích dữ liệu
+- Quản lý kinh doanh
+- Trưởng phòng Marketing
+- Quản lý cửa hàng
+
+---
 
 ## 3.2 Nội dung đào tạo
 
-- Hướng dẫn đăng nhập và phân quyền
-- Cách đọc và phân tích KPI
-- Cách sử dụng bộ lọc
-- Cách xuất báo cáo
-- Cách phản hồi khi có lỗi
+| Nội dung | Thời lượng |
+|----------|------------|
+| Giới thiệu hệ thống | 30 phút |
+| Hướng dẫn sử dụng Dashboard | 60 phút |
+| Thực hành lọc & phân tích dữ liệu | 60 phút |
+| Hỏi đáp | 30 phút |
+
+---
 
 ## 3.3 Hình thức đào tạo
 
-- 1 buổi đào tạo trực tiếp (2 giờ)
-- Tài liệu hướng dẫn sử dụng (User Guide)
-- Video hướng dẫn (nếu có)
+- Training trực tiếp hoặc online
+- Cung cấp tài liệu hướng dẫn (User Guide PDF)
+- Video hướng dẫn sử dụng
 
-## 3.4 Tiêu chí đánh giá sau đào tạo
+---
 
-- Người dùng thao tác được độc lập
-- Không cần hỗ trợ liên tục
-- Đạt ≥ 80% mức hài lòng
+## 3.4 Tiêu chí hoàn thành đào tạo
+
+- 100% người dùng tham gia
+- Người dùng thực hiện được các thao tác cơ bản
+- Không còn thắc mắc lớn
 
 ---
 
@@ -69,63 +83,81 @@
 
 ## 4.1 Tài liệu bàn giao
 
-- Tài liệu yêu cầu hệ thống
 - Test Plan
-- UAT Report
+- UAT Sign-off
 - Risk Register
-- Source code trên GitHub
-- Tài liệu hướng dẫn sử dụng
-
-## 4.2 Quy trình chuyển giao
-
-1. Xác nhận hoàn tất UAT
-2. Bàn giao tài liệu
-3. Bàn giao mã nguồn
-4. Ký biên bản nghiệm thu
-5. Bắt đầu giai đoạn bảo trì
+- Change Log
+- Source Code
+- Database Schema
+- User Guide
 
 ---
 
-# 5. Kế hoạch bảo trì hệ thống
+## 4.2 Biên bản bàn giao
 
-## 5.1 Bảo trì định kỳ
+Bao gồm:
 
-- Kiểm tra hệ thống mỗi tháng
-- Tối ưu truy vấn dữ liệu
-- Kiểm tra sao lưu dữ liệu
-
-## 5.2 Bảo trì khắc phục
-
-- Xử lý lỗi phát sinh
-- Điều chỉnh KPI khi có thay đổi nghiệp vụ
-- Cập nhật phiên bản nếu cần
+- Phiên bản hệ thống
+- Ngày bàn giao
+- Danh sách tài liệu
+- Trạng thái hệ thống
+- Chữ ký xác nhận hai bên
 
 ---
 
-# 6. Thỏa thuận mức dịch vụ (SLA - Service Level Agreement)
+# 5. Kế hoạch bảo trì (Maintenance Plan)
 
-## 6.1 Phạm vi hỗ trợ
+## 5.1 Các loại bảo trì
 
-- Hỗ trợ kỹ thuật Dashboard
-- Xử lý lỗi hệ thống
-- Hỗ trợ người dùng
-
-## 6.2 Thời gian phản hồi (Response Time)
-
-| Mức độ lỗi | Mô tả | Thời gian phản hồi | Thời gian xử lý |
-|------------|--------|-------------------|-----------------|
-| Critical | Hệ thống không hoạt động | ≤ 2 giờ | ≤ 24 giờ |
-| High | Lỗi ảnh hưởng lớn đến nghiệp vụ | ≤ 4 giờ | ≤ 48 giờ |
-| Medium | Lỗi nhỏ | ≤ 1 ngày | ≤ 3 ngày |
-| Low | Yêu cầu cải tiến | ≤ 2 ngày | Theo kế hoạch |
-
-## 6.3 Thời gian hỗ trợ
-
-- Thứ 2 – Thứ 6
-- 8h00 – 17h00
+| Loại bảo trì | Mô tả |
+|--------------|-------|
+| Corrective | Sửa lỗi phát sinh |
+| Adaptive | Điều chỉnh theo thay đổi môi trường |
+| Perfective | Cải thiện hiệu năng |
+| Preventive | Bảo trì phòng ngừa |
 
 ---
 
-# 7. Kết luận
+# 6. SLA (Service Level Agreement – Giả định)
 
-Việc xây dựng kế hoạch triển khai, đào tạo, chuyển giao và bảo trì chi tiết giúp đảm bảo hệ thống Dashboard vận hành ổn định, bền vững và đáp ứng nhu cầu dài hạn của doanh nghiệp.
+## 6.1 Phân loại mức độ sự cố
+
+| Mức độ | Mô tả | Thời gian phản hồi | Thời gian xử lý |
+|--------|-------|-------------------|-----------------|
+| Critical | Hệ thống không hoạt động | ≤ 1 giờ | ≤ 4 giờ |
+| High | Lỗi chức năng quan trọng | ≤ 2 giờ | ≤ 8 giờ |
+| Medium | Lỗi nhỏ | ≤ 4 giờ | ≤ 2 ngày |
+| Low | Yêu cầu cải tiến | ≤ 1 ngày | Theo kế hoạch |
+
+---
+
+## 6.2 Cam kết hệ thống
+
+- Uptime ≥ 99%
+- Backup dữ liệu hàng ngày
+- Lưu trữ backup tối thiểu 30 ngày
+- Kiểm tra bảo mật định kỳ hàng tháng
+
+---
+
+# 7. Kế hoạch hỗ trợ sau triển khai
+
+- Hỗ trợ 24/7 trong tuần đầu
+- Hỗ trợ giờ hành chính sau tuần đầu
+- Kênh hỗ trợ: Email / Ticket system
+
+---
+
+# 8. Quy trình tiếp nhận yêu cầu thay đổi sau Go-Live
+
+1. Người dùng gửi yêu cầu
+2. Ghi nhận vào Change Log
+3. Phân tích tác động
+4. Trình phê duyệt
+5. Triển khai theo quy trình Change Management
+
+---
+
+# 9. Kết luận
+
+Kế hoạch triển khai và bảo trì đảm bảo hệ thống InsightDash được vận hành ổn định, người dùng được đào tạo đầy đủ, có quy trình chuyển giao rõ ràng và có SLA cụ thể để duy trì chất lượng dịch vụ lâu dài.
