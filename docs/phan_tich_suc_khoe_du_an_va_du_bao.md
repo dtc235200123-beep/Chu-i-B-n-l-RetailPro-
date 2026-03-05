@@ -57,28 +57,99 @@ ETC = 49 – 28 = 21 đơn vị effort
 
 ---
 
-## 4. Phân tích nguyên nhân sai lệch
+## 4. Phân tích nguyên nhân của các sai lệch
 
-Qua theo dõi Issue trên GitHub và nội dung các rủi ro đang mở, có thể xác định các nguyên nhân chính:
+Dựa trên kết quả phân tích Earned Value Management:
 
-### 4.1. Rủi ro kỹ thuật (Technical Risks)
-- Trễ tiến độ ETL
-- Dashboard chưa đáp ứng yêu cầu
-- Hiệu năng hệ thống thấp
+SPI = 0.57  
+CPI = 0.57  
 
-→ Dẫn đến việc phải sửa đổi và làm lại (rework), làm tăng AC và giảm CPI.
+Có thể thấy dự án đang **chậm tiến độ và hiệu suất sử dụng nguồn lực thấp**. Các sai lệch này xuất phát từ một số nguyên nhân chính sau:
 
-### 4.2. Quản lý yêu cầu chưa chặt chẽ
-- Requirement thay đổi trong quá trình thực hiện
-- Stakeholder chưa thống nhất kỳ vọng ban đầu
+### 4.1. Sai lệch tiến độ (SPI < 1)
 
-→ Làm PV không còn phản ánh chính xác khối lượng thực tế.
+SPI = 0.57 cho thấy dự án mới hoàn thành **16/28 Issue**, tương đương khoảng **57% khối lượng công việc so với kế hoạch**.
 
-### 4.3. Phân bổ nguồn lực chưa tối ưu
-- Issue chưa được chia nhỏ
-- Một số task có độ phức tạp cao nhưng ước lượng thấp
+Nguyên nhân chính gồm:
 
-→ Làm giảm hiệu suất thực tế.
+- **Ước lượng công việc chưa chính xác**
+
+Một số Issue có độ phức tạp cao nhưng được ước lượng effort thấp, đặc biệt là các task liên quan đến:
++ Xây dựng pipeline ETL  
++ Thiết kế dashboard phân tích dữ liệu  
++ Tối ưu truy vấn dữ liệu  
+
+Điều này khiến thời gian thực hiện kéo dài hơn so với kế hoạch ban đầu.
+
+- **Phụ thuộc giữa các nhiệm vụ (Task Dependencies)**
+
+Một số công việc phụ thuộc vào kết quả của task trước đó, ví dụ:
+
++ Dashboard phụ thuộc dữ liệu từ ETL  
++ KPI dashboard phụ thuộc mô hình dữ liệu  
+
+Khi một task bị chậm, các task tiếp theo cũng bị ảnh hưởng và làm trễ tiến độ chung của dự án.
+
+- **Issue chưa được chia nhỏ**
+
+Một số Issue có phạm vi quá lớn nên:
+
++ Khó ước lượng effort chính xác  
++ Khó theo dõi tiến độ thực tế  
++ Dễ phát sinh thêm công việc ngoài kế hoạch  
+
+Điều này làm giảm tốc độ hoàn thành Issue.
+
+---
+
+### 4.2. Sai lệch chi phí / effort (CPI < 1)
+
+CPI = 0.57 cho thấy **hiệu suất sử dụng nguồn lực thấp**, tức là effort bỏ ra nhiều nhưng giá trị hoàn thành chưa tương xứng.
+
+Nguyên nhân chính bao gồm:
+
+- **Phát sinh rework (làm lại)**
+
+Một số chức năng phải chỉnh sửa lại do:
+
++ Dashboard chưa đáp ứng đúng yêu cầu ban đầu  
++ Cấu trúc dữ liệu cần điều chỉnh để phù hợp với phân tích  
+
+Việc sửa đổi nhiều lần làm tăng effort thực tế (AC).
+
+- **Thay đổi yêu cầu từ stakeholder**
+
+Trong quá trình thực hiện, một số yêu cầu phân tích được điều chỉnh như:
+
++ Thay đổi cách tính KPI  
++ Bổ sung thêm chỉ số phân tích  
+
+Những thay đổi này làm tăng khối lượng công việc so với kế hoạch ban đầu.
+
+- **Kinh nghiệm công nghệ của nhóm còn hạn chế**
+
+Một số thành viên chưa quen với các công cụ như:
+
++ ETL tools  
++ Dashboard BI  
++ Tối ưu truy vấn dữ liệu  
+
+Do đó thời gian thực hiện task dài hơn so với dự kiến.
+
+---
+
+### 4.3. Tác động tổng hợp đến dự án
+
+Các nguyên nhân trên dẫn đến sai lệch trong các chỉ số EVM:
+
+- EV thấp hơn PV → tiến độ thực tế chậm hơn kế hoạch → SPI thấp  
+- AC cao hơn giá trị tạo ra → hiệu suất nguồn lực thấp → CPI thấp  
+
+Kết quả là dự án:
+
+- Chậm tiến độ so với kế hoạch  
+- Effort thực tế tăng cao  
+- Dự báo tổng effort khi hoàn thành (EAC) lớn hơn đáng kể so với BAC
 
 ---
 
